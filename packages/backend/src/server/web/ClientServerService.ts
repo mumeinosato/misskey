@@ -31,13 +31,12 @@ import { PageEntityService } from '@/core/entities/PageEntityService.js';
 import { GalleryPostEntityService } from '@/core/entities/GalleryPostEntityService.js';
 import { ClipEntityService } from '@/core/entities/ClipEntityService.js';
 import { ChannelEntityService } from '@/core/entities/ChannelEntityService.js';
-import type { ChannelsRepository, ClipsRepository, FlashsRepository, GalleryPostsRepository, MiMeta, NotesRepository, PagesRepository, UserProfilesRepository, UsersRepository } from '@/models/index.js';
+import type { ChannelsRepository, ClipsRepository, FlashsRepository, GalleryPostsRepository, MiMeta, NotesRepository, PagesRepository, UserProfilesRepository, UsersRepository } from '@/models/_.js';
 import type Logger from '@/logger.js';
 import { deepClone } from '@/misc/clone.js';
 import { bindThis } from '@/decorators.js';
 import { FlashEntityService } from '@/core/entities/FlashEntityService.js';
 import { RoleService } from '@/core/RoleService.js';
-import manifest from './manifest.json' assert { type: 'json' };
 import { FeedService } from './FeedService.js';
 import { UrlPreviewService } from './UrlPreviewService.js';
 import { ClientLoggerService } from './ClientLoggerService.js';
@@ -51,6 +50,45 @@ const clientAssets = `${_dirname}/../../../../frontend/assets/`;
 const assets = `${_dirname}/../../../../../built/_frontend_dist_/`;
 const swAssets = `${_dirname}/../../../../../built/_sw_dist_/`;
 const viteOut = `${_dirname}/../../../../../built/_vite_/`;
+
+const manifest = {
+	'short_name': 'Misskey',
+	'name': 'Misskey',
+	'start_url': '/',
+	'display': 'standalone',
+	'background_color': '#313a42',
+	'theme_color': '#86b300',
+	'icons': [
+		{
+			'src': '/static-assets/icons/192.png',
+			'sizes': '192x192',
+			'type': 'image/png',
+			'purpose': 'maskable',
+		},
+		{
+			'src': '/static-assets/icons/512.png',
+			'sizes': '512x512',
+			'type': 'image/png',
+			'purpose': 'maskable',
+		},
+		{
+			'src': '/static-assets/splash.png',
+			'sizes': '300x300',
+			'type': 'image/png',
+			'purpose': 'any',
+		},
+	],
+	'share_target': {
+		'action': '/share/',
+		'method': 'GET',
+		'enctype': 'application/x-www-form-urlencoded',
+		'params': {
+			'title': 'title',
+			'text': 'text',
+			'url': 'url',
+		},
+	},
+};
 
 @Injectable()
 export class ClientServerService {
