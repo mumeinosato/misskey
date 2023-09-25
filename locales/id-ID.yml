@@ -354,7 +354,6 @@ invite: "Undang"
 driveCapacityPerLocalAccount: "Kapasitas drive per pengguna lokal"
 driveCapacityPerRemoteAccount: "Kapasitas drive per pengguna remote"
 inMb: "dalam Megabytes"
-iconUrl: "URL Gambar ikon"
 bannerUrl: "URL Banner"
 backgroundImageUrl: "URL Gambar latar"
 basicInfo: "Informasi Umum"
@@ -1099,6 +1098,8 @@ icon: "Avatar"
 forYou: "Untuk Anda"
 currentAnnouncements: "Pengumuman Saat Ini"
 pastAnnouncements: "Pengumuman Terdahulu"
+replies: "Balas"
+renotes: "Renote"
 _initialAccountSetting:
   accountCreated: "Akun kamu telah sukses dibuat!"
   letsStartAccountSetup: "Untuk pemula, ayo atur profilmu dulu."
@@ -1116,6 +1117,8 @@ _initialAccountSetting:
   laterAreYouSure: "Yakin banget untuk atur profil nanti?"
 _serverRules:
   description: "Daftar peraturan akan ditampilkan sebelum pendaftaran. Mengatur ringkasan dari Syarat dan Ketentuan sangat direkomendasikan."
+_serverSettings:
+  iconUrl: "URL ikon"
 _accountMigration:
   moveFrom: "Pindahkan akun lain ke akun ini"
   moveFromSub: "Buat alias ke akun lain"
@@ -1493,6 +1496,7 @@ _plugin:
   install: "Memasang plugin"
   installWarn: "Mohon jangan memasang plugin yang tidak dapat dipercayai."
   manage: "Manajemen plugin"
+  viewSource: "Lihat sumber"
 _preferencesBackups:
   list: "Cadangan yang dibuat"
   saveNew: "Simpan cadangan baru"
@@ -1680,7 +1684,6 @@ _timelineTutorial:
 _2fa:
   alreadyRegistered: "Kamu telah mendaftarkan perangkat otentikasi dua faktor."
   registerTOTP: "Daftarkan aplikasi autentikator"
-  passwordToTOTP: "Masukkan kata sandimu"
   step1: "Pertama, pasang aplikasi otentikasi (seperti {a} atau {b}) di perangkat kamu."
   step2: "Lalu, pindai kode QR yang ada di layar."
   step2Click: "Mengeklik kode QR ini akan membolehkanmu untuk mendaftarkan 2FA ke security-key atau aplikasi autentikator ponsel."
@@ -2038,3 +2041,6 @@ _webhookSettings:
     renote: "Ketika direnote"
     reaction: "Ketika menerima reaksi"
     mention: "Ketika sedang disebut"
+_moderationLogTypes:
+  suspend: "Tangguhkan"
+  resetPassword: "Atur ulang kata sandi"
