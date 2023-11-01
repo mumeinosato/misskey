@@ -22,7 +22,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 </template>
 
 <script lang="ts" setup>
-import { onUnmounted, onMounted, computed, shallowRef } from 'vue';
+import { onUnmounted, onDeactivated, onMounted, computed, shallowRef } from 'vue';
 import MkPagination, { Paging } from '@/components/MkPagination.vue';
 import XNotification from '@/components/MkNotification.vue';
 import MkDateSeparatedList from '@/components/MkDateSeparatedList.vue';
@@ -41,7 +41,7 @@ const pagingComponent = shallowRef<InstanceType<typeof MkPagination>>();
 
 const pagination: Paging = {
 	endpoint: 'i/notifications' as const,
-	limit: 10,
+	limit: 20,
 	params: computed(() => ({
 		excludeTypes: props.excludeTypes ?? undefined,
 	})),
@@ -66,6 +66,10 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+	if (connection) connection.dispose();
+});
+
+onDeactivated(() => {
 	if (connection) connection.dispose();
 });
 </script>
